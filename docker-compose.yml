@@ -12,7 +12,7 @@ services:
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
-            - ./:/var/www
+            - ./backend/api/:/var/www/
         networks:
             smart-net:
                 ipv4_address: 172.10.2.44
@@ -54,7 +54,7 @@ services:
         ports:
             - 80:80
         volumes:
-            - ./:/var/www
+            - ./backend/api:/var/www
             - ./.docker/nginx/:/etc/nginx/conf.d/
         networks:
             smart-net:
